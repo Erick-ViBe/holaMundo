@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Django</title>
+</head>
+<body>
+    <h1>**{{ message }}**</h1>
+    {% if not tasks %}
+    <h5>Terminaste todas tus tareas!!!! Felicidades, campeon!!!</h5>
+    {% else %}
+    <ul>
+        {% for task in tasks %}
+        <li style='color: {% if task.done %} green {% else %} red {% endif %};'>{{ task.description }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <input type="text" id="fname" name="fname"><br><br>
+
+</body>
+</html>
